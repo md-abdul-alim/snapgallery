@@ -1,1 +1,1 @@
-# snapgallery
+# Snap Gallery
