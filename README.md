@@ -1,1 +1,1 @@
-# Snap Gallery
+# Snap Gallery dot io
