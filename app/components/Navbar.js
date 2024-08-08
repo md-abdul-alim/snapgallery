@@ -28,12 +28,12 @@ export default function Navbar() {
           <PopoverGroup>
             {
               navigation.categories.map((category) => (
-                <Popover key={category.id} className="relative flex">
+                <Popover key={category.id} className="relative">
                   <PopoverButton>
                     {category.name}
                   </PopoverButton>
 
-                  <PopoverPanel>
+                  <PopoverPanel  className="flex flex-col">
                     {
                       category.featured.map((item) => (
                         <div key={item.name}>
