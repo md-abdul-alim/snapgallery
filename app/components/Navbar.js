@@ -26,25 +26,29 @@ export default function Navbar() {
       <header>
         <nav>
           <PopoverGroup>
-            {
-              navigation.categories.map((category) => (
-                <Popover key={category.id} className="relative">
-                  <PopoverButton>
-                    {category.name}
-                  </PopoverButton>
+            <div className="flex h-full space-x-8">
+              {
+                navigation.categories.map((category) => (
+                  <Popover key={category.id}>
+                    <div className='relative flex'>
+                      <PopoverButton>
+                        {category.name}
+                      </PopoverButton>
+                    </div>
 
-                  <PopoverPanel  className="flex flex-col">
-                    {
-                      category.featured.map((item) => (
-                        <div key={item.name}>
-                          <a href={item.href}>{item.name}</a>
-                        </div>
-                      ))
-                    }
-                  </PopoverPanel>
-                </Popover>
-              ))
-            }
+                    <PopoverPanel transition className="absolute flex-col">
+                      {
+                        category.featured.map((item) => (
+                          <div key={item.name} className='relative'>
+                            <a href={item.href}>{item.name}</a>
+                          </div>
+                        ))
+                      }
+                    </PopoverPanel>
+                  </Popover>
+                ))
+              }
+            </div>
           </PopoverGroup>
         </nav>
       </header>
