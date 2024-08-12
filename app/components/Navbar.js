@@ -1,57 +1,27 @@
-'use client'
-
-import React, { useState } from 'react'
-import {
-  Dialog,
-  DialogBackdrop,
-  DialogPanel,
-  Popover,
-  PopoverButton,
-  PopoverGroup,
-  PopoverPanel,
-  Tab,
-  TabGroup,
-  TabList,
-  TabPanel,
-  TabPanels,
-} from '@headlessui/react'
-
-import {navigation} from './navigation'
+import React from 'react'
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false)
 
   return (
-    <div className='bg-white'>
-      <header>
-        <nav>
-          <PopoverGroup>
-            <div className="flex h-full space-x-8">
-              {
-                navigation.categories.map((category) => (
-                  <Popover key={category.id}>
-                    <div className='relative flex'>
-                      <PopoverButton>
-                        {category.name}
-                      </PopoverButton>
-                    </div>
-
-                    <PopoverPanel transition className="absolute flex-col">
-                      {
-                        category.featured.map((item) => (
-                          <div key={item.name} className='relative'>
-                            <a href={item.href}>{item.name}</a>
-                          </div>
-                        ))
-                      }
-                    </PopoverPanel>
-                  </Popover>
-                ))
-              }
-            </div>
-          </PopoverGroup>
-        </nav>
-      </header>
-    </div>
+    <header className='stick'>
+      <nav className='flex justify-between items-center'>
+        <a href="#" className='mr-4'>Logo</a>
+        <div className='flex-grow'>
+          <input 
+            type="text" 
+            className='w-full p-2 rounded-md' 
+            name="search" 
+            id="search" 
+            placeholder='Search your desire...' 
+          />
+        </div>
+        <div className='ml-auto flex items-center'>
+          <a href="#" className='ml-4 mr-4'>Log In</a>
+          <button className='p-2 bg-blue-500 text-white rounded-md'>
+            Toggle bar
+          </button>
+        </div>          
+      </nav>
+    </header>
   )
 }
