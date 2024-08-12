@@ -1,4 +1,10 @@
 import { Inter } from "next/font/google";
+// Add this for fontasesome global css
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+config.autoAddCss = false
+// Add this for fontasesome global css
+
 import Navbar from "./components/Navbar";
 import "./globals.css";
 
