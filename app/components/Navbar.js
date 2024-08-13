@@ -1,8 +1,18 @@
-import React from 'react';
+'use client';
+
+import React, {useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faSearch, faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 
 export default function Navbar() {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+
+    console.log("hello")
+    setIsOpen(!isOpen);
+  }
 
   return (
     <header className='stick'>
@@ -26,9 +36,22 @@ export default function Navbar() {
         </div>
         <div className='ml-auto flex items-center'>
           <a href="#" className='ml-4 mr-4 text-gray-500'>Log In</a>
-          <button className='p-3 rounded-md text-gray-500'>
+          <button 
+            className='p-3 rounded-md text-gray-500 cursor-pointer'
+            onClick={toggleMenu}
+          >
             <FontAwesomeIcon icon={faBars} size='xl' />
           </button>
+          {isOpen && (
+            <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50'>
+              <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Explore</a>
+              <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Advertise</a>
+              <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Blog</a>
+              <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>About</a>
+              <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Press</a>
+              <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Join</a>
+            </div>
+          )}
         </div>          
       </nav>
     </header>
