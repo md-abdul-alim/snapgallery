@@ -34,16 +34,16 @@ export default function Navbar() {
             />
           </div>
         </div>
-        <div className='ml-auto flex items-center'>
+        <div className='ml-auto flex items-center relative'>
           <a href="#" className='ml-4 mr-4 text-gray-500'>Log In</a>
           <button 
-            className='p-3 rounded-md text-gray-500 cursor-pointer'
+            className='p-2 rounded-md text-gray-500 cursor-pointer'
             onClick={toggleMenu}
           >
             <FontAwesomeIcon icon={faBars} size='xl' />
           </button>
           {isOpen && (
-            <div className='absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50'>
+            <div className='absolute left-0 top-full w-auto bg-white rounded-md shadow-lg py-1 z-50'>
               <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Explore</a>
               <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Advertise</a>
               <a href="#" className='block px-4 py-2 text-gray-700 hover:bg-gray-100'>Blog</a>
