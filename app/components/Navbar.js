@@ -28,7 +28,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header className='stick'>
+    <header className='sticky'>
       <nav className='flex justify-between items-center'>
         <Link href="/" className='mr-4 flex items-center text-gray-700'>
           <FontAwesomeIcon icon={faCameraRetro} className='text-2xl' />
@@ -47,7 +47,7 @@ export default function Navbar() {
             />
           </div>
         </div>
-        <div className='ml-auto flex items-center relative'>
+        <div className='relative ml-auto flex items-center'>
           <Link href="/login" className='ml-4 mr-4 text-gray-500'>Log In</Link>
           <div ref={toggleRef}>
             <button 

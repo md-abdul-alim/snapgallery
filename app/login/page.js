@@ -1,8 +1,10 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGoogle, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 export default function Login() {
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
+    <div className="flex h-full items-center justify-center">
       <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow">
         <div>
           <h2 className="mt-6 text-3xl font-bold text-center text-gray-900">
@@ -77,6 +79,33 @@ export default function Login() {
             </button>
           </div>
         </form>
+
+        <div className="relative mt-6">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-300"></div>
+          </div>
+          <div className="relative flex justify-center text-sm">
+            <span className="px-2 bg-white text-gray-500">Or continue with</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <button
+            type="button"
+            className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+          >
+            <FontAwesomeIcon icon={faGoogle} className="w-5 h-5 mr-2" />
+            Google
+          </button>
+
+          <button
+            type="button"
+            className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50"
+          >
+            <FontAwesomeIcon icon={faFacebook} className="w-5 h-5 mr-2" />
+            Facebook
+          </button>
+        </div>
       </div>
     </div>
   );
