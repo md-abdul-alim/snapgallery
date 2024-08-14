@@ -1,13 +1,14 @@
 import React from 'react';
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 
 export default function SignUp() {
   return (
-    <div className="flex h-screen items-center justify-center bg-gray-100">
-      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow-lg">
+    <div className="flex h-full items-center justify-center">
+      <div className="w-full max-w-md p-8 space-y-8 bg-white rounded-lg shadow">
         <div>
-          <h2 className="mt-6 text-3xl font-extrabold text-center text-gray-900">
+          <h2 className="mt-6 text-3xl font-bold text-center text-gray-900">
             Create your account
           </h2>
         </div>
@@ -133,12 +134,12 @@ export default function SignUp() {
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
             Already have an account?{' '}
-            <a
+            <Link
               href="/login"
               className="font-medium text-indigo-600 hover:text-indigo-500"
             >
               Sign in
-            </a>
+            </Link>
           </p>
         </div>
       </div>
